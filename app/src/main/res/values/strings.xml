@@ -1,0 +1,56 @@
+<resources>
+
+    <string name="app_name">WhyLearnEnglish</string>
+
+    <!--Splash-->
+    <string name="one_sentence_a_day">A friend is one who knows you and loves you just the same.</string>
+    <string name="one_sentence_a_day_cn">朋友是懂你并爱你的人。</string>
+
+    <!--Guide-->
+    <string name="reason">Why are you leaning English?</string>
+    <string name="interval">How long do you decide to learn?</string>
+    <string name="level_now">What level are you now?</string>
+    <string name="level_goal">What level are your goal?</string>
+    <string name="confirm">Confirm</string>
+    <string name="guide_name">guide</string>
+    <string name="other">other</string>
+
+    <string-array name="array_reason">
+        <item>for traveling</item>
+        <item>for GRE test</item>
+        <item>for work</item>
+        <item>for school test</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="array_interval">
+        <item>a year</item>
+        <item>half a year</item>
+        <item>three month</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="array_time">
+        <item>year</item>
+        <item>month</item>
+        <item>day</item>
+    </string-array>
+    <string-array name="array_level">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+
+    <!--Dialog-->
+    <string name="tips">Tips</string>
+    <string name="exit_message">Are you sure exit?</string>
+    <string name="cancel">Cancel</string>
+
+
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reason"
+        style="@style/textstyle"/>
+
+    <Spinner
+        android:id="@+id/sp_reason"
+        style="@style/spinnerstyle"/>
+    <EditText
+        android:id="@+id/tv_reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/other"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/interval"
+        style="@style/textstyle"/>
+
+
+    <Spinner
+        android:id="@+id/sp_interval"
+        style="@style/spinnerstyle"
+        android:entries="@array/array_interval"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/tv_interval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="@string/other"/>
+
+        <Spinner
+            android:id="@+id/sp_time"
+            style="@style/spinnerstyle"
+            android:entries="@array/array_time"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level_now"
+        style="@style/textstyle"/>
+
+    <Spinner
+        android:id="@+id/sp_level_now"
+        style="@style/spinnerstyle"
+        android:entries="@array/array_level"/>
+
+    <EditText
+        android:id="@+id/tv_level_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/other"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level_goal"
+        style="@style/textstyle"/>
+
+
+    <Spinner
+        android:id="@+id/sp_level_goal"
+        style="@style/spinnerstyle"
+        android:entries="@array/array_level"/>
+
+    <EditText
+        android:id="@+id/tv_level_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/other"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"/>
+</LinearLayout>
