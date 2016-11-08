@@ -52,5 +52,7 @@
     <string name="exit_message">Are you sure exit?</string>
     <string name="cancel">Cancel</string>
 
-
+    <!--MainActivity-->
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 </resources>

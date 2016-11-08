@@ -1,30 +1,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_plan"
             android:icon="@mipmap/menu"
             android:title="Home" />
         <item
-            android:id="@+id/nav_messages"
+            android:id="@+id/nav_feeback"
             android:icon="@mipmap/menu"
             android:title="Messages" />
         <item
-            android:id="@+id/nav_friends"
+            android:id="@+id/nav_setting"
             android:icon="@mipmap/menu"
             android:title="Friends" />
-        <item
-            android:id="@+id/nav_discussion"
-            android:icon="@mipmap/menu"
-            android:title="Discussion" />
+        <!--<item-->
+            <!--android:id="@+id/nav_discussion"-->
+            <!--android:icon="@mipmap/menu"-->
+            <!--android:title="Discussion" />-->
     </group>
-    <item android:title="Sub items">
-        <menu>
-            <item
-                android:icon="@mipmap/menu"
-                android:title="Sub item 1" />
-            <item
-                android:icon="@mipmap/menu"
-                android:title="Sub item 2" />
-        </menu>
-    </item>
+    <!--<item android:title="Sub items">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:icon="@mipmap/menu"-->
+                <!--android:title="Sub item 1" />-->
+            <!--<item-->
+                <!--android:icon="@mipmap/menu"-->
+                <!--android:title="Sub item 2" />-->
+        <!--</menu>-->
+    <!--</item>-->
 </menu>
