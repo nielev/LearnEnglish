@@ -187,7 +187,7 @@ public class SPUtils {
 	/**
 	 * 获取Object中数据
 	 * @param key
-	 * @param Context
+	 * @param context
 	 * @return
 	 */
 	public static Object getObject(String key, Context context){

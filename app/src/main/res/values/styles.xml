@@ -13,10 +13,9 @@
     </style>
 
     <style name="textstyle">
-        <item name="android:textColor">#9f3F51B5</item>
+        <item name="android:textColor">#ff30469b</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_marginTop">30dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
+
     </style>
     <style name="spinnerstyle">
         <item name="android:layout_width">match_parent</item>

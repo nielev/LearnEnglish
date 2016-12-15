@@ -1,22 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <!--<group android:checkableBehavior="single">-->
         <item
             android:id="@+id/nav_plan"
             android:icon="@mipmap/menu"
-            android:title="Home" />
+            android:title="Plan" />
         <item
             android:id="@+id/nav_feeback"
             android:icon="@mipmap/menu"
-            android:title="Messages" />
+            android:title="Feeback" />
         <item
             android:id="@+id/nav_setting"
             android:icon="@mipmap/menu"
-            android:title="Friends" />
+            android:title="Setting" />
         <!--<item-->
             <!--android:id="@+id/nav_discussion"-->
             <!--android:icon="@mipmap/menu"-->
             <!--android:title="Discussion" />-->
-    </group>
+    <!--</group>-->
     <!--<item android:title="Sub items">-->
         <!--<menu>-->
             <!--<item-->

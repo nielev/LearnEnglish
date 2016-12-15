@@ -3,8 +3,8 @@
     <string name="app_name">WhyLearnEnglish</string>
 
     <!--Splash-->
-    <string name="one_sentence_a_day">A friend is one who knows you and loves you just the same.</string>
-    <string name="one_sentence_a_day_cn">朋友是懂你并爱你的人。</string>
+    <string name="one_sentence_a_day">Knowing yourself is the beginning of all wisdom.</string>
+    <string name="one_sentence_a_day_cn">智者始于自知。</string>
 
     <!--Guide-->
     <string name="reason">Why are you leaning English?</string>

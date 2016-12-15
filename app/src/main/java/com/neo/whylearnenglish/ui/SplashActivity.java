@@ -57,7 +57,7 @@ public class SplashActivity extends BaseActivity {
                 // 判断是否需要跳到新手引导
                 boolean isGuideShow = SPUtils.getBoolean(SPCode.IS_GUIDE_SHOW,
                         false, SplashActivity.this);
-
+                isGuideShow = true;
                 if (isGuideShow) {
                     // 动画结束后跳主页面
                     startActivity(new Intent(SplashActivity.this,

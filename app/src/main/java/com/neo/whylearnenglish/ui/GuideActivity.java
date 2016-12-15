@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.neo.whylearnenglish.R;
 import com.neo.whylearnenglish.base.BaseActivity;
+import com.neo.whylearnenglish.global.SPCode;
+import com.neo.whylearnenglish.utils.SPUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -92,4 +94,10 @@ public class GuideActivity extends BaseActivity {
         finish();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SPUtils.putBoolean(SPCode.IS_GUIDE_SHOW,
+                true,this);
+    }
 }

@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.tencent.tinker.anno.DefaultLifeCycle;
@@ -23,6 +25,7 @@ import com.tencent.tinker.loader.shareutil.ShareConstants;
 public class WhyLearnApplicationLike extends DefaultApplicationLike {
     private final static String TAG = "WhyLearnApplicationLike";
     private static Context context;
+    public static Handler mainHandler;
     public WhyLearnApplicationLike(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent, Resources[] resources, ClassLoader[] classLoader, AssetManager[] assetManager) {
         super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent, resources, classLoader, assetManager);
         context = application;
@@ -39,6 +42,7 @@ public class WhyLearnApplicationLike extends DefaultApplicationLike {
         super.onBaseContextAttached(base);
 //        MultiDex.install(base);
         TinkerInstaller.install(this);
+        mainHandler = new Handler(Looper.getMainLooper());
     }
 
     public static Context getContext(){

@@ -4,14 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.neo.whylearnenglish.R;
 import com.neo.whylearnenglish.base.BaseActivity;
 import com.neo.whylearnenglish.base.WhyLearnApplicationLike;
 
@@ -370,17 +374,6 @@ public class UIUtils {
     }
 
     /**
-     * 获取Wifi Mac地址
-     *   很不准确！
-     * @return
-     */
-//    public static String getWifiMacAddr(){
-//        WifiManager wifi = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
-//        WifiInfo info = wifi.getConnectionInfo();
-//        return info.getMacAddress();
-//    }
-
-    /**
      * 获取本地 Mac地址
      * @return
      */
@@ -409,4 +402,31 @@ public class UIUtils {
         }
         return macSerial;
     }
+
+    /**
+     * 获取系统状态栏高度
+     * @return
+     */
+    public static int getStatusBarHeight(Activity activity){
+        // 获取状态栏高度
+        if(null != activity) {
+            Rect rect = new Rect();
+            Window window = activity.getWindow();
+            window.getDecorView().getWindowVisibleDisplayFrame(rect);
+            int statusBarHeight = rect.top;
+            return statusBarHeight;
+        }else {
+            return  0;
+        }
+    }
+
+    public static void showInMainThread(final String str) {
+        WhyLearnApplicationLike.mainHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getContext(), str, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
