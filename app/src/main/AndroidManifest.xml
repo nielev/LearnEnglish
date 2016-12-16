@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".ui.GuideActivity"/>
         <activity android:name=".ui.MainActivity"/>
+        <activity android:name=".ui.LetterActivity"/>
     </application>
 
 </manifest>

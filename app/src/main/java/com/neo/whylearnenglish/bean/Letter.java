@@ -29,7 +29,7 @@ public class Letter implements Serializable{
     /**
      * 发音
      */
-    public static class Pronunciation {
+    public static class Pronunciation implements Serializable{
         /**
          * 音标phonetic symbol
          */
@@ -52,7 +52,7 @@ public class Letter implements Serializable{
      * 词类
      * parts of speech
      */
-    public static class POS {
+    public static class POS implements Serializable{
         public String posName;
         public String acceptation;
 
@@ -68,7 +68,7 @@ public class Letter implements Serializable{
     /**
      * 例句
      */
-    public static class Sentence {
+    public static class Sentence implements Serializable{
         public String orig;
         public String trans;
 

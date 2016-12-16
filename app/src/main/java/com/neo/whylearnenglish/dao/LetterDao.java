@@ -14,7 +14,6 @@ import rx.Observable;
  */
 
 public interface LetterDao {
-    @FormUrlEncoded
     @GET("dictionary.php")
     Observable<String> getLetter(@Query("w") String w, @Query("key") String key);
 }

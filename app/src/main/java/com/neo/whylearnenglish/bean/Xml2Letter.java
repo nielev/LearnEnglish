@@ -62,9 +62,9 @@ public class Xml2Letter {
 
         public MapHandler() {
             letter = new Letter();
-            pronList = new ArrayList<>();
-            posList = new ArrayList<>();
-            sentenceList = new ArrayList<>();
+            letter.pronunciationList = new ArrayList<>();
+            letter.posList = new ArrayList<>();
+            letter.sentenceList = new ArrayList<>();
         }
 
         @Override
@@ -112,7 +112,7 @@ public class Xml2Letter {
             } else if (localName.equals(PRON)) {
                 if(null != pronunciation){
                     pronunciation.pron = builder.toString();
-                    pronList.add(pronunciation);
+                    letter.pronunciationList.add(pronunciation);
                     pronunciation = null;
                 }
             } else if (localName.equals(POS)) {
@@ -121,7 +121,7 @@ public class Xml2Letter {
             } else if (localName.equals(ACCEPTATION)) {
                 if (null != pos) {
                     pos.acceptation = builder.toString();
-                    posList.add(pos);
+                    letter.posList.add(pos);
                     pos = null;
                 }
             } else if (localName.equals(ORIG)) {
@@ -129,7 +129,7 @@ public class Xml2Letter {
             } else if (localName.equals(TRANS)){
                 sentence.trans = builder.toString();
             } else if (localName.equals(SENT)){
-                sentenceList.add(sentence);
+                letter.sentenceList.add(sentence);
             }
         }
 

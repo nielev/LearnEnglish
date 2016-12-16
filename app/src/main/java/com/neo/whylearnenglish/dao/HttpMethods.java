@@ -4,13 +4,17 @@ import android.content.Context;
 
 import com.neo.whylearnenglish.bean.Letter;
 import com.neo.whylearnenglish.bean.Xml2Letter;
+import com.neo.whylearnenglish.function.StringConverterFactory;
 import com.neo.whylearnenglish.global.Constant;
+import com.neo.whylearnenglish.utils.LogUtil;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.Subscriber;
@@ -32,7 +36,7 @@ public class HttpMethods {
         httpClientBuilder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         mRetrofit = new Retrofit.Builder()
                 .client(httpClientBuilder.build())
-//                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(StringConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(Constant.URL_DIC_SEARCH)
                 .build();
@@ -55,8 +59,8 @@ public class HttpMethods {
     }
 
     public void getLetter(Subscriber<Letter> subscriber, String w){
-        mLetterDao.getLetter(w, Constant.DIC_KEY)
-            .map(new HttpResultFunc<Letter>())
+        Observable<String> letter = mLetterDao.getLetter(w, Constant.DIC_KEY);
+        letter.map(new HttpResultFunc<Letter>())
             .subscribeOn(Schedulers.io())
             .unsubscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -67,6 +71,7 @@ public class HttpMethods {
 
         @Override
         public Letter call(String s) {
+            LogUtil.i("LETTER",s);
             Letter letter = (Letter) Xml2Letter.parseImageXml(s);
             return letter;
         }

@@ -1,7 +1,9 @@
 package com.neo.whylearnenglish.ui;
 
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
@@ -72,7 +74,6 @@ public class MainActivity extends BaseActivity {
         mToolbar.setNavigationIcon(R.mipmap.icon_nav);
 
         mHeaderView = mNavigationView.getHeaderView(0);
-
     }
 
 
@@ -125,24 +126,8 @@ public class MainActivity extends BaseActivity {
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                UIUtils.showInMainThread("查询"+query);
-                Subscriber<Letter> subscriber = new Subscriber<Letter>() {
-                    @Override
-                    public void onCompleted() {
-                        Toast.makeText(MainActivity.this, "Get Letter Completed", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(Letter letter) {
-                        LogUtil.i("LETTER",letter.toString());
-                    }
-                };
-//                HttpMethods.getInstance().getLetter(subscriber, "subscriber");
+                //订阅查询逻辑
+                subcribeQuery(query);
                 return false;
             }
 
@@ -154,18 +139,38 @@ public class MainActivity extends BaseActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * 订阅单词查询的网络请求
+     * @param query
+     */
+    private void subcribeQuery(String query) {
+        Subscriber<Letter> subscriber = new Subscriber<Letter>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(Letter letter) {
+                Intent intent = new Intent(MainActivity.this,LetterActivity.class);
+                intent.putExtra("letter",letter);
+                getForegroundActivity().startActivity(intent);
+            }
+        };
+        HttpMethods.getInstance().getLetter(subscriber, query);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_search:
 
                 break;
-//            case R.id.action_share:
-//                Toast.makeText(this,"share",Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.action_settings:
-//                Toast.makeText(this,"settings",Toast.LENGTH_SHORT).show();
-//                break;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -35,12 +35,12 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        initData();
-        initListener();
         if(isStartStatusColor){
             setColor(this,0xff30469b);
         }
-        
+        initData();
+        initListener();
+
     }
 
     protected abstract void initView();
