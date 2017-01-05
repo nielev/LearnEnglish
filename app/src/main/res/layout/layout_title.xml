@@ -3,11 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:background="#30469b">
+    <ImageView
+        android:id="@+id/iv_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/back_normal"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"/>
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MyApp"
         android:textSize="18sp"
         android:layout_centerInParent="true"
         android:textColor="@android:color/white"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp">
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:src="@mipmap/headtitle_right_setting_nomal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/confirm"/>
+    </RelativeLayout>
 </RelativeLayout>

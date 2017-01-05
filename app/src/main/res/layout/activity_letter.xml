@@ -32,7 +32,7 @@
                     android:id="@+id/tv_phonetic_symbol_en"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text='@{"英["+letter.pronunciationList.get(0).ps+"]"}'/>
+                    android:text='@{ letter.pronunciationList.size() > 0 ? "英["+letter.pronunciationList.get(0).ps+"]" : "" }'/>
                 <ImageView
                     android:layout_marginLeft="5dp"
                     android:id="@+id/iv_pronunciation_en"
@@ -44,7 +44,7 @@
                     android:id="@+id/tv_phonetic_symbol_am"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text='@{"美["+letter.pronunciationList.get(1).ps+"]"}'/>
+                    android:text='@{ letter.pronunciationList.size() > 0 ? "美["+letter.pronunciationList.get(1).ps+"]" : ""}'/>
                 <ImageView
                     android:layout_marginLeft="5dp"
                     android:id="@+id/iv_pronunciation_am"

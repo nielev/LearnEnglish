@@ -59,12 +59,12 @@ public class HttpMethods {
     }
 
     public void getLetter(Subscriber<Letter> subscriber, String w){
-        Observable<String> letter = mLetterDao.getLetter(w, Constant.DIC_KEY);
-        letter.map(new HttpResultFunc<Letter>())
-            .subscribeOn(Schedulers.io())
-            .unsubscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(subscriber);
+        mLetterDao.getLetter(w, Constant.DIC_KEY)
+                .map(new HttpResultFunc<Letter>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
     }
 
     private class HttpResultFunc<Letter> implements Func1<String, Letter>{

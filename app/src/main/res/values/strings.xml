@@ -55,4 +55,34 @@
     <!--MainActivity-->
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+
+    <string-array name="query_suggestions">
+        <item>android</item>
+        <item>bad</item>
+        <item>come</item>
+        <item>driver</item>
+        <item>egg</item>
+        <item>favorate</item>
+        <item>go</item>
+        <item>have</item>
+        <item>ios</item>
+        <item>joke</item>
+        <item>javascript</item>
+        <item>kit</item>
+        <item>lake</item>
+        <item>month</item>
+        <item>no</item>
+        <item>operate</item>
+        <item>push</item>
+        <item>quit</item>
+        <item>rise</item>
+        <item>sad</item>
+        <item>take</item>
+        <item>use</item>
+        <item>very</item>
+        <item>warm</item>
+        <item>xylophone</item>
+        <item>you</item>
+        <item>zero</item>
+    </string-array>
 </resources>

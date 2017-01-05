@@ -56,6 +56,7 @@ public class LetterActivity extends BaseActivity implements View.OnClickListener
         if(null == letter){
             letter = new Letter();
         }
+
         binding.setLetter(letter);
 
         ButterKnife.bind(this);
@@ -76,10 +77,14 @@ public class LetterActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void initData() {
-        mRv_pos_desc.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRv_pos_desc.setAdapter(new AcceptationAdapter(letter.posList));
-        mRv_sentence.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRv_sentence.setAdapter(new SentenceAdapter(letter.sentenceList));
+        if(null != letter.posList && letter.posList.size() > 0) {
+            mRv_pos_desc.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+            mRv_pos_desc.setAdapter(new AcceptationAdapter(letter.posList));
+        }
+        if(null != letter.sentenceList && letter.sentenceList.size() > 0) {
+            mRv_sentence.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+            mRv_sentence.setAdapter(new SentenceAdapter(letter.sentenceList));
+        }
         setColor(this, 0xffe9e4d9);
     }
 

@@ -30,7 +30,7 @@ public class CloseUtils {
      * @param closeables
      */
     public static void closeQuietly(Closeable... closeables){
-        if(null != closeables){
+        if(null != closeables && closeables.length > 0){
             for (Closeable closeable : closeables) {
                 try {
                     closeable.close();
